@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  INFLimitedInfectionViewController.h
 //  Infection
 //
 //  Created by Justin Ehlert on 12/9/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface INFLimitedInfectionViewController : UIViewController
 
 @end
-

@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		F844DCBC1A37D1DD005410AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCBB1A37D1DD005410AA /* main.m */; };
 		F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCBE1A37D1DD005410AA /* AppDelegate.m */; };
-		F844DCC21A37D1DD005410AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCC11A37D1DD005410AA /* ViewController.m */; };
 		F844DCC51A37D1DD005410AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC31A37D1DD005410AA /* Main.storyboard */; };
 		F844DCC71A37D1DD005410AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC61A37D1DD005410AA /* Images.xcassets */; };
 		F844DCCA1A37D1DD005410AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC81A37D1DD005410AA /* LaunchScreen.xib */; };
 		F844DCD61A37D1DD005410AA /* InfectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCD51A37D1DD005410AA /* InfectionTests.m */; };
+		F844DCE51A37DF7A005410AA /* INFVisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCE41A37DF7A005410AA /* INFVisualizationViewController.m */; };
+		F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCE71A37DF89005410AA /* INFTotalInfectionViewController.m */; };
+		F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCEA1A37DF9B005410AA /* INFLimitedInfectionViewController.m */; };
+		F844DCEE1A37DFAE005410AA /* INFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCED1A37DFAE005410AA /* INFSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,20 @@
 		F844DCBB1A37D1DD005410AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F844DCBD1A37D1DD005410AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F844DCBE1A37D1DD005410AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F844DCC01A37D1DD005410AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F844DCC11A37D1DD005410AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F844DCC41A37D1DD005410AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F844DCC61A37D1DD005410AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F844DCC91A37D1DD005410AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F844DCCF1A37D1DD005410AA /* InfectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F844DCD41A37D1DD005410AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F844DCD51A37D1DD005410AA /* InfectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfectionTests.m; sourceTree = "<group>"; };
+		F844DCE31A37DF7A005410AA /* INFVisualizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFVisualizationViewController.h; sourceTree = "<group>"; };
+		F844DCE41A37DF7A005410AA /* INFVisualizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFVisualizationViewController.m; sourceTree = "<group>"; };
+		F844DCE61A37DF89005410AA /* INFTotalInfectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFTotalInfectionViewController.h; sourceTree = "<group>"; };
+		F844DCE71A37DF89005410AA /* INFTotalInfectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFTotalInfectionViewController.m; sourceTree = "<group>"; };
+		F844DCE91A37DF9B005410AA /* INFLimitedInfectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFLimitedInfectionViewController.h; sourceTree = "<group>"; };
+		F844DCEA1A37DF9B005410AA /* INFLimitedInfectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFLimitedInfectionViewController.m; sourceTree = "<group>"; };
+		F844DCEC1A37DFAE005410AA /* INFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFSettingsViewController.h; sourceTree = "<group>"; };
+		F844DCED1A37DFAE005410AA /* INFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +90,12 @@
 		F844DCB81A37D1DD005410AA /* Infection */ = {
 			isa = PBXGroup;
 			children = (
+				F844DCE01A37DEA7005410AA /* Visualization */,
+				F844DCE11A37DEB0005410AA /* Total Infection */,
+				F844DCE21A37DEB7005410AA /* Limited Infection */,
+				F844DCDF1A37DEA1005410AA /* Settings */,
 				F844DCBD1A37D1DD005410AA /* AppDelegate.h */,
 				F844DCBE1A37D1DD005410AA /* AppDelegate.m */,
-				F844DCC01A37D1DD005410AA /* ViewController.h */,
-				F844DCC11A37D1DD005410AA /* ViewController.m */,
 				F844DCC31A37D1DD005410AA /* Main.storyboard */,
 				F844DCC61A37D1DD005410AA /* Images.xcassets */,
 				F844DCC81A37D1DD005410AA /* LaunchScreen.xib */,
@@ -117,6 +128,44 @@
 				F844DCD41A37D1DD005410AA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F844DCDF1A37DEA1005410AA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F844DCEC1A37DFAE005410AA /* INFSettingsViewController.h */,
+				F844DCED1A37DFAE005410AA /* INFSettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F844DCE01A37DEA7005410AA /* Visualization */ = {
+			isa = PBXGroup;
+			children = (
+				F844DCE31A37DF7A005410AA /* INFVisualizationViewController.h */,
+				F844DCE41A37DF7A005410AA /* INFVisualizationViewController.m */,
+			);
+			path = Visualization;
+			sourceTree = "<group>";
+		};
+		F844DCE11A37DEB0005410AA /* Total Infection */ = {
+			isa = PBXGroup;
+			children = (
+				F844DCE61A37DF89005410AA /* INFTotalInfectionViewController.h */,
+				F844DCE71A37DF89005410AA /* INFTotalInfectionViewController.m */,
+			);
+			name = "Total Infection";
+			path = TotalInfection;
+			sourceTree = "<group>";
+		};
+		F844DCE21A37DEB7005410AA /* Limited Infection */ = {
+			isa = PBXGroup;
+			children = (
+				F844DCE91A37DF9B005410AA /* INFLimitedInfectionViewController.h */,
+				F844DCEA1A37DF9B005410AA /* INFLimitedInfectionViewController.m */,
+			);
+			name = "Limited Infection";
+			path = LimitedInfection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F844DCC21A37D1DD005410AA /* ViewController.m in Sources */,
+				F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */,
+				F844DCE51A37DF7A005410AA /* INFVisualizationViewController.m in Sources */,
+				F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */,
 				F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */,
 				F844DCBC1A37D1DD005410AA /* main.m in Sources */,
+				F844DCEE1A37DFAE005410AA /* INFSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
