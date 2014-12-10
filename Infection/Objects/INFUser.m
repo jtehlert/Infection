@@ -17,4 +17,27 @@
 
 @implementation INFUser
 
+- (id)init
+{
+    self = [super init];
+    
+    if(self)
+    {
+        _versionNumber = 1;
+        _isTeacher = NO;
+    }
+    
+    return self;
+}
+
+- (void)setVersionNumber:(NSInteger)versionNumber
+{
+    _versionNumber = versionNumber;
+}
+
+- (void)setIsTeacher:(BOOL)isTeacher
+{
+    _isTeacher = isTeacher;
+}
+
 @end

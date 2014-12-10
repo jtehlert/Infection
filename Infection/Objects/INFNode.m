@@ -17,9 +17,24 @@
 
 @implementation INFNode
 
+- (void)setUserObject:(INFUser *)obj
+{
+    _user = obj;
+}
+
 - (INFUser *)user
 {
     return _user;
+}
+
+- (void)setInteriorNodes:(NSArray *)nodes
+{
+    _nodes = nodes;
+}
+
+- (NSArray *)nodes
+{
+    return _nodes;
 }
 
 @end

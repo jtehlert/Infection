@@ -12,6 +12,9 @@
 
 @interface INFTree : NSObject
 
+- (void)setRoot:(INFNode *)node;
 - (INFNode *)rootNode;
+
+- (void)printOut;
 
 @end

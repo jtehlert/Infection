@@ -10,6 +10,10 @@
 
 @interface INFDataManager : NSObject
 
++ (INFDataManager *)sharedManager;
+
+- (void)generateDefaultData;
+
 - (NSArray *)trees;
 
 @end

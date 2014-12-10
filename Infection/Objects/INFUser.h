@@ -10,4 +10,7 @@
 
 @interface INFUser : NSObject
 
+- (void)setVersionNumber:(NSInteger)versionNumber;
+- (void)setIsTeacher:(BOOL)isTeacher;
+
 @end

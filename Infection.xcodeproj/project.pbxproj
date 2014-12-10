@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9CDD0A4E1A3806610055B0E4 /* INFDefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CDD0A4D1A3806610055B0E4 /* INFDefaultData.plist */; };
 		F844DCBC1A37D1DD005410AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCBB1A37D1DD005410AA /* main.m */; };
 		F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCBE1A37D1DD005410AA /* AppDelegate.m */; };
 		F844DCC51A37D1DD005410AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC31A37D1DD005410AA /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9CDD0A4D1A3806610055B0E4 /* INFDefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = INFDefaultData.plist; sourceTree = "<group>"; };
 		F844DCB61A37D1DD005410AA /* Infection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F844DCBA1A37D1DD005410AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F844DCBB1A37D1DD005410AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				F844DCC61A37D1DD005410AA /* Images.xcassets */,
 				F844DCC81A37D1DD005410AA /* LaunchScreen.xib */,
 				F844DCB91A37D1DD005410AA /* Supporting Files */,
+				9CDD0A4D1A3806610055B0E4 /* INFDefaultData.plist */,
 			);
 			path = Infection;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			files = (
 				F844DCC51A37D1DD005410AA /* Main.storyboard in Resources */,
 				F844DCCA1A37D1DD005410AA /* LaunchScreen.xib in Resources */,
+				9CDD0A4E1A3806610055B0E4 /* INFDefaultData.plist in Resources */,
 				F844DCC71A37D1DD005410AA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +502,7 @@
 				F844DCDB1A37D1DD005410AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F844DCDC1A37D1DD005410AA /* Build configuration list for PBXNativeTarget "InfectionTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +511,7 @@
 				F844DCDE1A37D1DD005410AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
