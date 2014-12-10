@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="1624" y="-220"/>
         </scene>
-        <!--Total Infection View Controller-->
+        <!--Total Infection-->
         <scene sceneID="8du-kN-aMb">
             <objects>
                 <viewController id="eNi-2T-8Cz" customClass="INFTotalInfectionViewController" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2GX-Gb-KnB"/>
+                    <navigationItem key="navigationItem" title="Total Infection" id="2GX-Gb-KnB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrH-q7-zbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="804" y="-572"/>
         </scene>
-        <!--Limited Infection View Controller-->
+        <!--Limited Infection-->
         <scene sceneID="EW3-Lo-O1g">
             <objects>
                 <viewController id="iGB-p2-rAc" customClass="INFLimitedInfectionViewController" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kfE-cG-Yfq"/>
+                    <navigationItem key="navigationItem" title="Limited Infection" id="kfE-cG-Yfq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p4-Hr-wgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="804" y="1812"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="SjM-LB-V3U">
             <objects>
-                <viewController id="SzL-yT-nek" customClass="INFSettingsViewController" sceneMemberID="viewController">
+                <viewController title="Settings" id="SzL-yT-nek" customClass="INFSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d5K-6Q-kcz"/>
                         <viewControllerLayoutGuide type="bottom" id="u03-TE-c3y"/>
@@ -187,7 +187,7 @@
                             <constraint firstItem="g9y-45-7Y0" firstAttribute="top" secondItem="d5K-6Q-kcz" secondAttribute="bottom" constant="40" id="fDy-fS-qE5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="S09-sl-rpP"/>
+                    <navigationItem key="navigationItem" title="Settings" id="S09-sl-rpP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSh-hZ-Bcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

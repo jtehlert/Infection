@@ -17,6 +17,10 @@
 		F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCE71A37DF89005410AA /* INFTotalInfectionViewController.m */; };
 		F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCEA1A37DF9B005410AA /* INFLimitedInfectionViewController.m */; };
 		F844DCEE1A37DFAE005410AA /* INFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCED1A37DFAE005410AA /* INFSettingsViewController.m */; };
+		F844DCF21A37E54D005410AA /* INFTree.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCF11A37E54D005410AA /* INFTree.m */; };
+		F844DCF51A37E558005410AA /* INFNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCF41A37E558005410AA /* INFNode.m */; };
+		F844DCF81A37E568005410AA /* INFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCF71A37E568005410AA /* INFUser.m */; };
+		F844DCFB1A37EACA005410AA /* INFDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCFA1A37EACA005410AA /* INFDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,14 @@
 		F844DCEA1A37DF9B005410AA /* INFLimitedInfectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFLimitedInfectionViewController.m; sourceTree = "<group>"; };
 		F844DCEC1A37DFAE005410AA /* INFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFSettingsViewController.h; sourceTree = "<group>"; };
 		F844DCED1A37DFAE005410AA /* INFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFSettingsViewController.m; sourceTree = "<group>"; };
+		F844DCF01A37E54D005410AA /* INFTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFTree.h; sourceTree = "<group>"; };
+		F844DCF11A37E54D005410AA /* INFTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFTree.m; sourceTree = "<group>"; };
+		F844DCF31A37E558005410AA /* INFNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFNode.h; sourceTree = "<group>"; };
+		F844DCF41A37E558005410AA /* INFNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFNode.m; sourceTree = "<group>"; };
+		F844DCF61A37E568005410AA /* INFUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFUser.h; sourceTree = "<group>"; };
+		F844DCF71A37E568005410AA /* INFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFUser.m; sourceTree = "<group>"; };
+		F844DCF91A37EACA005410AA /* INFDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFDataManager.h; sourceTree = "<group>"; };
+		F844DCFA1A37EACA005410AA /* INFDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 		F844DCB81A37D1DD005410AA /* Infection */ = {
 			isa = PBXGroup;
 			children = (
+				F844DCEF1A37E2FF005410AA /* Objects */,
 				F844DCE01A37DEA7005410AA /* Visualization */,
 				F844DCE11A37DEB0005410AA /* Total Infection */,
 				F844DCE21A37DEB7005410AA /* Limited Infection */,
@@ -166,6 +179,21 @@
 			);
 			name = "Limited Infection";
 			path = LimitedInfection;
+			sourceTree = "<group>";
+		};
+		F844DCEF1A37E2FF005410AA /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F844DCF01A37E54D005410AA /* INFTree.h */,
+				F844DCF11A37E54D005410AA /* INFTree.m */,
+				F844DCF31A37E558005410AA /* INFNode.h */,
+				F844DCF41A37E558005410AA /* INFNode.m */,
+				F844DCF61A37E568005410AA /* INFUser.h */,
+				F844DCF71A37E568005410AA /* INFUser.m */,
+				F844DCF91A37EACA005410AA /* INFDataManager.h */,
+				F844DCFA1A37EACA005410AA /* INFDataManager.m */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,12 +296,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F844DCF21A37E54D005410AA /* INFTree.m in Sources */,
+				F844DCFB1A37EACA005410AA /* INFDataManager.m in Sources */,
 				F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */,
 				F844DCE51A37DF7A005410AA /* INFVisualizationViewController.m in Sources */,
 				F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */,
+				F844DCF81A37E568005410AA /* INFUser.m in Sources */,
 				F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */,
 				F844DCBC1A37D1DD005410AA /* main.m in Sources */,
 				F844DCEE1A37DFAE005410AA /* INFSettingsViewController.m in Sources */,
+				F844DCF51A37E558005410AA /* INFNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
