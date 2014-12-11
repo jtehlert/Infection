@@ -95,12 +95,11 @@ static NSString * const kVisualizationTableViewCellReuseIdentifier = @"Visualiza
     
     if([object isKindOfClass:[INFTree class]])
     {
-        cellLabel = [NSString stringWithFormat:@"Class %ld", indexPath.row + 1];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
         INFNode *node = [(INFTree *)object rootNode];
         INFUser *user = [node user];
         
+        cellLabel = [NSString stringWithFormat:@"Class %ld - %@", indexPath.row + 1, [user userName]];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = [self generateDetailStringForUser:user];
     } else if([object isKindOfClass:[INFNode class]])
     {
