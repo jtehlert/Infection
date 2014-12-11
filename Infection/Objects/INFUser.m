@@ -12,6 +12,7 @@
 
 @property (assign, nonatomic) BOOL isTeacher, isInfected;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) INFTree *tree;
 
 @end
 
@@ -46,6 +47,11 @@
     _name = name;
 }
 
+- (void)setTree:(INFTree *)tree
+{
+    _tree = tree;
+}
+
 - (BOOL)isUserATeacher
 {
     return _isTeacher;
@@ -59,6 +65,11 @@
 - (NSString *)userName
 {
     return _name;
+}
+
+- (INFTree *)parentTree
+{
+    return _tree;
 }
 
 @end

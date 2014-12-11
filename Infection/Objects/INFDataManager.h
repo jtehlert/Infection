@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "INFTree.h"
+#import "INFUser.h"
 
 @interface INFDataManager : NSObject
 
 + (INFDataManager *)sharedManager;
 
 - (void)generateDefaultData;
-
+- (INFTree *)treeThatUserExistsIn:(INFUser *)user;
+- (void)infectTree:(INFTree *)tree;
 - (NSArray *)trees;
 
 @end

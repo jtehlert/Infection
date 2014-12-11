@@ -59,7 +59,7 @@ static INFDataManager *shared = NULL;
             
             [root setUserObject:rootUser];
             
-            [root setInteriorNodes:[self generateInteriorNodes:[class objectAtIndex:0]]];
+            [root setInteriorNodes:[self generateInteriorNodes:[class objectAtIndex:0] inTree:tree]];
         }
         
         [tree setRoot:root];
@@ -72,6 +72,20 @@ static INFDataManager *shared = NULL;
     [self printOutAllTrees];
 }
 
+- (INFTree *)treeThatUserExistsIn:(INFUser *)user
+{
+    return [user parentTree];
+}
+
+- (void)infectTree:(INFTree *)tree
+{
+    INFNode *rootNode = [tree rootNode];
+    INFUser *rootUser = [rootNode user];
+    [rootUser setIsInfected:YES];
+    
+    [self infectInteriorNodes:[rootNode nodes]];
+}
+
 - (NSArray *)trees
 {
     return _trees;
@@ -79,7 +93,7 @@ static INFDataManager *shared = NULL;
 
 #pragma mark - private methods
 
-- (NSArray *)generateInteriorNodes:(NSArray *)array
+- (NSArray *)generateInteriorNodes:(NSArray *)array inTree:(INFTree *)tree
 {
     NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithCapacity:0];
     
@@ -91,16 +105,18 @@ static INFDataManager *shared = NULL;
         {
             INFUser *teacher = [[INFUser alloc] init];
             [teacher setIsTeacher:YES];
+            [teacher setTree:tree];
             self.teacherCount++;
             [teacher setName:[NSString stringWithFormat:@"Teacher %ld", self.teacherCount]];
             
             [node setUserObject:teacher];
-            [node setInteriorNodes:[self generateInteriorNodes:(NSArray *)object]];
+            [node setInteriorNodes:[self generateInteriorNodes:(NSArray *)object inTree:tree]];
             
             [mutableArray addObject:node];
         } else if ([object isKindOfClass:[NSString class]])
         {
             INFUser *student = [[INFUser alloc] init];
+            [student setTree:tree];
             self.studentCount++;
             [student setName:[NSString stringWithFormat:@"Student %ld", self.studentCount]];
             
@@ -111,6 +127,21 @@ static INFDataManager *shared = NULL;
     }
     
     return [NSArray arrayWithArray:mutableArray];
+}
+
+- (void)infectInteriorNodes:(NSArray *)array
+{
+    for(INFNode *node in array)
+    {
+        INFUser *user = [node user];
+        
+        [user setIsInfected:YES];
+        
+        if([user isUserATeacher])
+        {
+            [self infectInteriorNodes:[node nodes]];
+        }
+    }
 }
 
 #pragma mark - Data Logging

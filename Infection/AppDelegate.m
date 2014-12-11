@@ -20,6 +20,7 @@
     // Override point for customization after application launch.
     
     [[INFDataManager sharedManager] generateDefaultData];
+    [[INFDataManager sharedManager] infectTree:[[[INFDataManager sharedManager] trees] objectAtIndex:4]];
     
     return YES;
 }
