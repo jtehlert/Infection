@@ -16,7 +16,7 @@ static NSString * const kDefaultDataPlist = @"INFDefaultData";
 @interface INFDataManager()
 
 @property (strong, nonatomic) NSArray *trees;
-@property (assign, nonatomic) NSInteger studentCount, teacherCount, rootTeacherCount;
+@property (assign, nonatomic) NSInteger studentCount, teacherCount, rootTeacherCount, infectedUsers, healthyUsers;
 
 @end
 
@@ -63,6 +63,7 @@ static INFDataManager *shared = NULL;
         }
         
         [tree setRoot:root];
+        self.healthyUsers++;
         
         [mutableData addObject:tree];
     }
@@ -84,6 +85,20 @@ static INFDataManager *shared = NULL;
     [rootUser setIsInfected:YES];
     
     [self infectInteriorNodes:[rootNode nodes]];
+    self.infectedUsers++;
+    self.healthyUsers--;
+}
+
+#pragma mark - properties
+
+- (NSInteger)healthyUsers
+{
+    return _healthyUsers;
+}
+
+- (NSInteger)infectedUsers
+{
+    return _infectedUsers;
 }
 
 - (NSArray *)trees
@@ -113,6 +128,7 @@ static INFDataManager *shared = NULL;
             [node setInteriorNodes:[self generateInteriorNodes:(NSArray *)object inTree:tree]];
             
             [mutableArray addObject:node];
+            self.healthyUsers++;
         } else if ([object isKindOfClass:[NSString class]])
         {
             INFUser *student = [[INFUser alloc] init];
@@ -123,6 +139,7 @@ static INFDataManager *shared = NULL;
             [node setUserObject:student];
             
             [mutableArray addObject:node];
+            self.healthyUsers++;
         }
     }
     
@@ -136,6 +153,8 @@ static INFDataManager *shared = NULL;
         INFUser *user = [node user];
         
         [user setIsInfected:YES];
+        self.infectedUsers++;
+        self.healthyUsers--;
         
         if([user isUserATeacher])
         {
