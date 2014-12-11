@@ -14,7 +14,6 @@
 		F844DCC71A37D1DD005410AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC61A37D1DD005410AA /* Images.xcassets */; };
 		F844DCCA1A37D1DD005410AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC81A37D1DD005410AA /* LaunchScreen.xib */; };
 		F844DCD61A37D1DD005410AA /* InfectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCD51A37D1DD005410AA /* InfectionTests.m */; };
-		F844DCE51A37DF7A005410AA /* INFVisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCE41A37DF7A005410AA /* INFVisualizationViewController.m */; };
 		F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCE71A37DF89005410AA /* INFTotalInfectionViewController.m */; };
 		F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCEA1A37DF9B005410AA /* INFLimitedInfectionViewController.m */; };
 		F844DCEE1A37DFAE005410AA /* INFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCED1A37DFAE005410AA /* INFSettingsViewController.m */; };
@@ -22,6 +21,7 @@
 		F844DCF51A37E558005410AA /* INFNode.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCF41A37E558005410AA /* INFNode.m */; };
 		F844DCF81A37E568005410AA /* INFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCF71A37E568005410AA /* INFUser.m */; };
 		F844DCFB1A37EACA005410AA /* INFDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCFA1A37EACA005410AA /* INFDataManager.m */; };
+		F8D17FB91A3949A600792DDA /* INFVisualizationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D17FB81A3949A600792DDA /* INFVisualizationTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +47,6 @@
 		F844DCCF1A37D1DD005410AA /* InfectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F844DCD41A37D1DD005410AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F844DCD51A37D1DD005410AA /* InfectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfectionTests.m; sourceTree = "<group>"; };
-		F844DCE31A37DF7A005410AA /* INFVisualizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFVisualizationViewController.h; sourceTree = "<group>"; };
-		F844DCE41A37DF7A005410AA /* INFVisualizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFVisualizationViewController.m; sourceTree = "<group>"; };
 		F844DCE61A37DF89005410AA /* INFTotalInfectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFTotalInfectionViewController.h; sourceTree = "<group>"; };
 		F844DCE71A37DF89005410AA /* INFTotalInfectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFTotalInfectionViewController.m; sourceTree = "<group>"; };
 		F844DCE91A37DF9B005410AA /* INFLimitedInfectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFLimitedInfectionViewController.h; sourceTree = "<group>"; };
@@ -63,6 +61,8 @@
 		F844DCF71A37E568005410AA /* INFUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFUser.m; sourceTree = "<group>"; };
 		F844DCF91A37EACA005410AA /* INFDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFDataManager.h; sourceTree = "<group>"; };
 		F844DCFA1A37EACA005410AA /* INFDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFDataManager.m; sourceTree = "<group>"; };
+		F8D17FB71A3949A600792DDA /* INFVisualizationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFVisualizationTableViewController.h; sourceTree = "<group>"; };
+		F8D17FB81A3949A600792DDA /* INFVisualizationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFVisualizationTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +158,8 @@
 		F844DCE01A37DEA7005410AA /* Visualization */ = {
 			isa = PBXGroup;
 			children = (
-				F844DCE31A37DF7A005410AA /* INFVisualizationViewController.h */,
-				F844DCE41A37DF7A005410AA /* INFVisualizationViewController.m */,
+				F8D17FB71A3949A600792DDA /* INFVisualizationTableViewController.h */,
+				F8D17FB81A3949A600792DDA /* INFVisualizationTableViewController.m */,
 			);
 			path = Visualization;
 			sourceTree = "<group>";
@@ -301,9 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F844DCF21A37E54D005410AA /* INFTree.m in Sources */,
+				F8D17FB91A3949A600792DDA /* INFVisualizationTableViewController.m in Sources */,
 				F844DCFB1A37EACA005410AA /* INFDataManager.m in Sources */,
 				F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */,
-				F844DCE51A37DF7A005410AA /* INFVisualizationViewController.m in Sources */,
 				F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */,
 				F844DCF81A37E568005410AA /* INFUser.m in Sources */,
 				F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */,

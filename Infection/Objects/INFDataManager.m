@@ -16,6 +16,7 @@ static NSString * const kDefaultDataPlist = @"INFDefaultData";
 @interface INFDataManager()
 
 @property (strong, nonatomic) NSArray *trees;
+@property (assign, nonatomic) NSInteger studentCount, teacherCount, rootTeacherCount;
 
 @end
 
@@ -53,6 +54,8 @@ static INFDataManager *shared = NULL;
         {
             INFUser *rootUser = [[INFUser alloc] init];
             [rootUser setIsTeacher:YES];
+            self.rootTeacherCount++;
+            [rootUser setName:[NSString stringWithFormat:@"Root Teacher %ld", self.rootTeacherCount]];
             
             [root setUserObject:rootUser];
             
@@ -88,6 +91,8 @@ static INFDataManager *shared = NULL;
         {
             INFUser *teacher = [[INFUser alloc] init];
             [teacher setIsTeacher:YES];
+            self.teacherCount++;
+            [teacher setName:[NSString stringWithFormat:@"Teacher %ld", self.teacherCount]];
             
             [node setUserObject:teacher];
             [node setInteriorNodes:[self generateInteriorNodes:(NSArray *)object]];
@@ -96,6 +101,8 @@ static INFDataManager *shared = NULL;
         } else if ([object isKindOfClass:[NSString class]])
         {
             INFUser *student = [[INFUser alloc] init];
+            self.studentCount++;
+            [student setName:[NSString stringWithFormat:@"Student %ld", self.studentCount]];
             
             [node setUserObject:student];
             

@@ -10,8 +10,8 @@
 
 @interface INFUser()
 
-@property (assign, nonatomic) NSInteger versionNumber;
-@property (assign, nonatomic) BOOL isTeacher;
+@property (assign, nonatomic) BOOL isTeacher, isInfected;
+@property (strong, nonatomic) NSString *name;
 
 @end
 
@@ -23,21 +23,42 @@
     
     if(self)
     {
-        _versionNumber = 1;
+        _isInfected = NO;
         _isTeacher = NO;
+        _name = @"";
     }
     
     return self;
 }
 
-- (void)setVersionNumber:(NSInteger)versionNumber
+- (void)setIsInfected:(BOOL)isInfected
 {
-    _versionNumber = versionNumber;
+    _isInfected = isInfected;
 }
 
 - (void)setIsTeacher:(BOOL)isTeacher
 {
     _isTeacher = isTeacher;
+}
+
+- (void)setName:(NSString *)name
+{
+    _name = name;
+}
+
+- (BOOL)isUserATeacher
+{
+    return _isTeacher;
+}
+
+- (BOOL)isUserInfected
+{
+    return _isInfected;
+}
+
+- (NSString *)userName
+{
+    return _name;
 }
 
 @end

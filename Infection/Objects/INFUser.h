@@ -10,7 +10,12 @@
 
 @interface INFUser : NSObject
 
-- (void)setVersionNumber:(NSInteger)versionNumber;
+- (void)setIsInfected:(BOOL)isInfected;
 - (void)setIsTeacher:(BOOL)isTeacher;
+- (void)setName:(NSString *)name;
+
+- (BOOL)isUserATeacher;
+- (BOOL)isUserInfected;
+- (NSString *)userName;
 
 @end
