@@ -30,6 +30,8 @@ static NSString *const kVisualizationViewControllerNibName = @"INFVisualizationV
     [self generateViewControllers];
     [self createPageControl];
     
+    self.view.backgroundColor = [UIColor colorWithRed:(57.0/255.0) green:(69.0/255.0) blue:(81.0/255.0) alpha:1.0];
+    
     [self setViewControllers:[NSArray arrayWithObjects:[self.viewControllersArray firstObject], nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
         
     }];

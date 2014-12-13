@@ -8,11 +8,18 @@
 
 #import "INFVisualizationViewController.h"
 #import "INFTree.h"
+#import "INFNode.h"
+#import "INFUser.h"
+#import "INFTreeView.h"
 
 @interface INFVisualizationViewController ()
 
 @property (strong, nonatomic) INFTree *tree;
 @property (assign, nonatomic) NSInteger index;
+@property (strong, nonatomic) INFTreeView *treeView;
+
+@property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -33,8 +40,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self setClassName];
+    [self showTree];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)setClassName
+{
+    [self.classNameLabel setText:[NSString stringWithFormat:@"Class %ld", self.index+1]];
+}
+     
+- (void)showTree
+{
+    self.treeView = [[INFTreeView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.frame.size.width + 103, self.scrollView.frame.size.height + 119)andRootNode:[self.tree rootNode]];
+    self.treeView.backgroundColor = [UIColor clearColor];
+    [self.scrollView addSubview:self.treeView];
+}
+
+#pragma mark - Properties
 
 - (NSInteger)viewControllerIndex
 {

@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="INFVisualizationViewController">
             <connections>
+                <outlet property="classNameLabel" destination="m4B-tV-djs" id="8EE-fz-Gvc"/>
+                <outlet property="scrollView" destination="aoo-uj-t05" id="qCt-aK-nco"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,22 +19,21 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4B-tV-djs">
                     <rect key="frame" x="10" y="44" width="580" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaF-jL-6eE">
-                    <rect key="frame" x="0.0" y="74.5" width="600" height="525.5"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-uj-t05">
+                    <rect key="frame" x="0.0" y="84.5" width="600" height="515.5"/>
+                </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.22352941176470587" green="0.27058823529411763" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="eaF-jL-6eE" secondAttribute="trailing" id="9RI-ZQ-1ZX"/>
-                <constraint firstItem="eaF-jL-6eE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BMk-MY-ACj"/>
-                <constraint firstAttribute="bottom" secondItem="eaF-jL-6eE" secondAttribute="bottom" id="c4K-2Q-gR3"/>
+                <constraint firstItem="aoo-uj-t05" firstAttribute="top" secondItem="m4B-tV-djs" secondAttribute="bottom" constant="20" id="NdG-9Q-cKN"/>
+                <constraint firstItem="aoo-uj-t05" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qms-Xi-4Tn"/>
                 <constraint firstAttribute="trailing" secondItem="m4B-tV-djs" secondAttribute="trailing" constant="10" id="eKR-0p-Dur"/>
                 <constraint firstItem="m4B-tV-djs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="f6a-YD-Gfl"/>
-                <constraint firstItem="eaF-jL-6eE" firstAttribute="top" secondItem="m4B-tV-djs" secondAttribute="bottom" constant="10" id="tUv-lJ-oR8"/>
+                <constraint firstAttribute="trailing" secondItem="aoo-uj-t05" secondAttribute="trailing" id="fYb-Ny-jr9"/>
+                <constraint firstAttribute="bottom" secondItem="aoo-uj-t05" secondAttribute="bottom" id="yPF-UZ-KU6"/>
                 <constraint firstItem="m4B-tV-djs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zjc-84-sCH"/>
             </constraints>
         </view>
