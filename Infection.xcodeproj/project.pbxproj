@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9CDD0A4E1A3806610055B0E4 /* INFDefaultData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CDD0A4D1A3806610055B0E4 /* INFDefaultData.plist */; };
+		F81CBA611A3BBB3A00353B1F /* INFVisualizationPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81CBA601A3BBB3A00353B1F /* INFVisualizationPageViewController.m */; };
+		F81CBA651A3BBB7300353B1F /* INFVisualizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81CBA631A3BBB7300353B1F /* INFVisualizationViewController.m */; };
+		F81CBA661A3BBB7300353B1F /* INFVisualizationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F81CBA641A3BBB7300353B1F /* INFVisualizationViewController.xib */; };
 		F844DCBC1A37D1DD005410AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCBB1A37D1DD005410AA /* main.m */; };
 		F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F844DCBE1A37D1DD005410AA /* AppDelegate.m */; };
 		F844DCC51A37D1DD005410AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F844DCC31A37D1DD005410AA /* Main.storyboard */; };
@@ -36,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		9CDD0A4D1A3806610055B0E4 /* INFDefaultData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = INFDefaultData.plist; sourceTree = "<group>"; };
+		F81CBA5F1A3BBB3A00353B1F /* INFVisualizationPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFVisualizationPageViewController.h; sourceTree = "<group>"; };
+		F81CBA601A3BBB3A00353B1F /* INFVisualizationPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFVisualizationPageViewController.m; sourceTree = "<group>"; };
+		F81CBA621A3BBB7300353B1F /* INFVisualizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INFVisualizationViewController.h; sourceTree = "<group>"; };
+		F81CBA631A3BBB7300353B1F /* INFVisualizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INFVisualizationViewController.m; sourceTree = "<group>"; };
+		F81CBA641A3BBB7300353B1F /* INFVisualizationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INFVisualizationViewController.xib; sourceTree = "<group>"; };
 		F844DCB61A37D1DD005410AA /* Infection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Infection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F844DCBA1A37D1DD005410AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F844DCBB1A37D1DD005410AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +168,11 @@
 			children = (
 				F8D17FB71A3949A600792DDA /* INFVisualizationTableViewController.h */,
 				F8D17FB81A3949A600792DDA /* INFVisualizationTableViewController.m */,
+				F81CBA5F1A3BBB3A00353B1F /* INFVisualizationPageViewController.h */,
+				F81CBA601A3BBB3A00353B1F /* INFVisualizationPageViewController.m */,
+				F81CBA621A3BBB7300353B1F /* INFVisualizationViewController.h */,
+				F81CBA631A3BBB7300353B1F /* INFVisualizationViewController.m */,
+				F81CBA641A3BBB7300353B1F /* INFVisualizationViewController.xib */,
 			);
 			path = Visualization;
 			sourceTree = "<group>";
@@ -279,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81CBA661A3BBB7300353B1F /* INFVisualizationViewController.xib in Resources */,
 				F844DCC51A37D1DD005410AA /* Main.storyboard in Resources */,
 				F844DCCA1A37D1DD005410AA /* LaunchScreen.xib in Resources */,
 				9CDD0A4E1A3806610055B0E4 /* INFDefaultData.plist in Resources */,
@@ -305,6 +319,8 @@
 				F844DCFB1A37EACA005410AA /* INFDataManager.m in Sources */,
 				F844DCEB1A37DF9B005410AA /* INFLimitedInfectionViewController.m in Sources */,
 				F844DCE81A37DF89005410AA /* INFTotalInfectionViewController.m in Sources */,
+				F81CBA611A3BBB3A00353B1F /* INFVisualizationPageViewController.m in Sources */,
+				F81CBA651A3BBB7300353B1F /* INFVisualizationViewController.m in Sources */,
 				F844DCF81A37E568005410AA /* INFUser.m in Sources */,
 				F844DCBF1A37D1DD005410AA /* AppDelegate.m in Sources */,
 				F844DCBC1A37D1DD005410AA /* main.m in Sources */,

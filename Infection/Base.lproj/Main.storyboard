@@ -5,24 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="h9p-9z-EHZ">
-            <objects>
-                <viewController id="Lfz-jz-QUl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WKK-aR-53P"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hkq-G1-3LF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q80-J5-6dc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qBg-hx-Ty7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1624" y="-220"/>
-        </scene>
         <!--Total Infection-->
         <scene sceneID="8du-kN-aMb">
             <objects>
@@ -126,6 +108,14 @@
             </objects>
             <point key="canvasLocation" x="1624" y="-895"/>
         </scene>
+        <!--Visualization Page View Controller-->
+        <scene sceneID="ynj-hN-Mrm">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="9Fr-qM-xsW" customClass="INFVisualizationPageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWF-wh-Pwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="-238"/>
+        </scene>
         <!--Visualization Table View Controller-->
         <scene sceneID="a9N-ZV-IfG">
             <objects>
@@ -174,7 +164,7 @@
                     <tabBarItem key="tabBarItem" title="Visualization" id="GSZ-Tx-okA"/>
                     <connections>
                         <segue destination="2qY-FF-LJy" kind="relationship" relationship="masterViewController" id="giF-uk-taE"/>
-                        <segue destination="Lfz-jz-QUl" kind="relationship" relationship="detailViewController" id="IAg-f1-HPR"/>
+                        <segue destination="9Fr-qM-xsW" kind="relationship" relationship="detailViewController" id="gR1-iF-ETQ"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bso-oK-fhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
