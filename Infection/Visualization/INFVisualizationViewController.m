@@ -12,7 +12,7 @@
 #import "INFUser.h"
 #import "INFTreeView.h"
 
-@interface INFVisualizationViewController ()
+@interface INFVisualizationViewController () <UIScrollViewDelegate>
 
 @property (strong, nonatomic) INFTree *tree;
 @property (assign, nonatomic) NSInteger index;
@@ -57,9 +57,18 @@
      
 - (void)showTree
 {
+    self.scrollView.delegate = self;
+    
     self.treeView = [[INFTreeView alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.frame.size.width + 103, self.scrollView.frame.size.height + 119)andRootNode:[self.tree rootNode]];
     self.treeView.backgroundColor = [UIColor clearColor];
     [self.scrollView addSubview:self.treeView];
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.treeView;
 }
 
 #pragma mark - Properties
