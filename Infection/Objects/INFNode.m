@@ -7,11 +7,13 @@
 //
 
 #import "INFNode.h"
+#import "INFUser.h"
 
 @interface INFNode()
 
 @property (strong, nonatomic) INFUser *user;
 @property (strong, nonatomic) NSArray *nodes;
+@property (assign, nonatomic) NSInteger childrenSize;
 
 @end
 
@@ -22,19 +24,34 @@
     _user = obj;
 }
 
-- (INFUser *)user
-{
-    return _user;
-}
-
 - (void)setInteriorNodes:(NSArray *)nodes
 {
     _nodes = nodes;
 }
 
+- (void)setSize:(NSInteger)size
+{
+    _childrenSize = size;
+}
+
+- (INFUser *)user
+{
+    return _user;
+}
+
 - (NSArray *)nodes
 {
     return _nodes;
+}
+
+- (NSInteger)size
+{
+    return _childrenSize;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Name: %@ - Size: %ld", [self.user userName], self.childrenSize];
 }
 
 @end

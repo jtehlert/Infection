@@ -13,9 +13,11 @@
 @interface INFNode : NSObject
 
 - (void)setUserObject:(INFUser *)obj;
-- (INFUser *)user;
-
 - (void)setInteriorNodes:(NSArray *)nodes;
+- (void)setSize:(NSInteger)size;
+
 - (NSArray *)nodes;
+- (INFUser *)user;
+- (NSInteger)size;
 
 @end

@@ -16,7 +16,7 @@ static NSString * const kDefaultDataPlist = @"INFDefaultData";
 @interface INFDataManager()
 
 @property (strong, nonatomic) NSArray *trees;
-@property (strong, nonatomic) NSMutableArray *allUsers;
+@property (strong, nonatomic) NSMutableArray *allUsers, *teacherNodes;
 @property (assign, nonatomic) NSInteger treeCount, studentCount, teacherCount, rootTeacherCount, infectedUsers, healthyUsers;
 
 @end
@@ -31,6 +31,7 @@ static INFDataManager *shared = NULL;
         {
             shared = [[INFDataManager alloc] init];
             shared.allUsers = [[NSMutableArray alloc] initWithCapacity:0];
+            shared.teacherNodes = [[NSMutableArray alloc] initWithCapacity:0];
         }
         return shared;
     }
@@ -71,6 +72,8 @@ static INFDataManager *shared = NULL;
             [root setUserObject:rootUser];
             
             [root setInteriorNodes:[self generateInteriorNodes:[class objectAtIndex:0] inTree:tree]];
+            
+            [self.teacherNodes addObject:root];
         }
         
         [tree setRoot:root];
@@ -80,6 +83,8 @@ static INFDataManager *shared = NULL;
     }
     
     _trees = [NSArray arrayWithArray:mutableData];
+    
+    [self generateTeacherSizes];
     
     [self printOutAllTrees];
 }
@@ -174,6 +179,7 @@ static INFDataManager *shared = NULL;
             
             [node setUserObject:teacher];
             [node setInteriorNodes:[self generateInteriorNodes:(NSArray *)object inTree:tree]];
+            [self.teacherNodes addObject:node];
             
             [mutableArray addObject:node];
             self.healthyUsers++;
@@ -211,6 +217,30 @@ static INFDataManager *shared = NULL;
             [self infectInteriorNodes:[node nodes]];
         }
     }
+}
+
+- (void)generateTeacherSizes
+{
+    for(INFNode *node in self.teacherNodes)
+    {
+        [node setSize:[self interiorTeacherNodeSize:node andPreviousSize:1]];
+    }    
+}
+
+- (NSInteger)interiorTeacherNodeSize:(INFNode *)node andPreviousSize:(NSInteger)size
+{
+    for(INFNode *interiorNode in [node nodes])
+    {
+        if([interiorNode size] > 0)
+        {
+            size += [interiorNode size];
+        } else
+        {
+            size++;
+        }
+    }
+    
+    return size;
 }
 
 #pragma mark - Data Logging
