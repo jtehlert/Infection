@@ -16,7 +16,8 @@ static NSString * const kDefaultDataPlist = @"INFDefaultData";
 @interface INFDataManager()
 
 @property (strong, nonatomic) NSArray *trees;
-@property (assign, nonatomic) NSInteger studentCount, teacherCount, rootTeacherCount, infectedUsers, healthyUsers;
+@property (strong, nonatomic) NSMutableArray *allUsers;
+@property (assign, nonatomic) NSInteger treeCount, studentCount, teacherCount, rootTeacherCount, infectedUsers, healthyUsers;
 
 @end
 
@@ -29,6 +30,7 @@ static INFDataManager *shared = NULL;
         if ( !shared || shared == NULL )
         {
             shared = [[INFDataManager alloc] init];
+            shared.allUsers = [[NSMutableArray alloc] initWithCapacity:0];
         }
         return shared;
     }
@@ -44,18 +46,27 @@ static INFDataManager *shared = NULL;
     NSString *path = [[NSBundle mainBundle] pathForResource:kDefaultDataPlist ofType:@"plist"];
     NSArray *plist = [[NSArray alloc] initWithContentsOfFile:path];
     
+    self.treeCount = 0;
+    
     for(NSArray *class in plist)
     {
+        self.treeCount++;
+        
         INFTree *tree = [[INFTree alloc] init];
+        [tree setClassName:[NSString stringWithFormat:@"Class %ld", self.treeCount]];
+        
         INFNode *root = [[INFNode alloc] init];
         
         // Make sure class has data
         if([class count] > 0)
         {
+            self.rootTeacherCount++;
+            
             INFUser *rootUser = [[INFUser alloc] init];
             [rootUser setIsTeacher:YES];
-            self.rootTeacherCount++;
             [rootUser setName:[NSString stringWithFormat:@"Root Teacher %ld", self.rootTeacherCount]];
+            [rootUser setTree:tree];
+            [self.allUsers addObject:rootUser];
             
             [root setUserObject:rootUser];
             
@@ -87,6 +98,28 @@ static INFDataManager *shared = NULL;
     [self infectInteriorNodes:[rootNode nodes]];
     self.infectedUsers++;
     self.healthyUsers--;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DataUpdated" object:nil];
+}
+
+- (NSArray *)users
+{
+    return [NSArray arrayWithArray:self.allUsers];
+}
+
+- (NSArray *)nonInfectedUsers
+{
+    NSMutableArray *nonInfectedUsers = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for(INFUser *user in [self users])
+    {
+        if(![user isUserInfected])
+        {
+            [nonInfectedUsers addObject:user];
+        }
+    }
+    
+    return nonInfectedUsers;
 }
 
 #pragma mark - properties
@@ -118,11 +151,13 @@ static INFDataManager *shared = NULL;
         
         if ([object isKindOfClass:[NSArray class]])
         {
+            self.teacherCount++;
+            
             INFUser *teacher = [[INFUser alloc] init];
             [teacher setIsTeacher:YES];
             [teacher setTree:tree];
-            self.teacherCount++;
             [teacher setName:[NSString stringWithFormat:@"Teacher %ld", self.teacherCount]];
+            [self.allUsers addObject:teacher];
             
             [node setUserObject:teacher];
             [node setInteriorNodes:[self generateInteriorNodes:(NSArray *)object inTree:tree]];
@@ -131,10 +166,12 @@ static INFDataManager *shared = NULL;
             self.healthyUsers++;
         } else if ([object isKindOfClass:[NSString class]])
         {
+            self.studentCount++;
+            
             INFUser *student = [[INFUser alloc] init];
             [student setTree:tree];
-            self.studentCount++;
             [student setName:[NSString stringWithFormat:@"Student %ld", self.studentCount]];
+            [self.allUsers addObject:student];
             
             [node setUserObject:student];
             
@@ -169,7 +206,7 @@ static INFDataManager *shared = NULL;
 {
     NSInteger classCount = 1;
     for (INFTree *tree in _trees) {
-        NSLog(@"Class %ld", classCount);
+        NSLog(@"%@", [tree className]);
         [tree printOut];
         classCount++;
     }

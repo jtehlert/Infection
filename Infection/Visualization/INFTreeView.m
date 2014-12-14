@@ -29,6 +29,7 @@ static NSInteger const kNodeVerticalSpacing = 50;
     if(self)
     {
         _rootNode = rootNode;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataUpdated:) name:@"DataUpdated" object:nil];
     }
     
     return self;
@@ -37,6 +38,11 @@ static NSInteger const kNodeVerticalSpacing = 50;
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     [self drawRootNode];
+}
+
+- (void)dataUpdated:(NSNotification *)n
+{
+    [self setNeedsDisplay];
 }
 
 - (void)drawRootNode

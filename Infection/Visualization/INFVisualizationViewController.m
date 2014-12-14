@@ -52,7 +52,7 @@
 
 - (void)setClassName
 {
-    [self.classNameLabel setText:[NSString stringWithFormat:@"Class %ld", self.index+1]];
+    [self.classNameLabel setText:[NSString stringWithFormat:@"%@", [self.tree className]]];
 }
      
 - (void)showTree

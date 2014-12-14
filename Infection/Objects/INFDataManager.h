@@ -22,4 +22,7 @@
 - (NSInteger)healthyUsers;
 - (NSInteger)infectedUsers;
 
+- (NSArray *)users;
+- (NSArray *)nonInfectedUsers;
+
 @end

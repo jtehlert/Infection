@@ -12,6 +12,7 @@
 @interface INFTree()
 
 @property (strong, nonatomic) INFNode *rootNode;
+@property (strong, nonatomic) NSString *name;
 
 @end
 
@@ -22,9 +23,19 @@
     _rootNode = node;
 }
 
+- (void)setClassName:(NSString *)className
+{
+    _name = className;
+}
+
 - (INFNode *)rootNode
 {
     return _rootNode;
+}
+
+- (NSString *)className
+{
+    return _name;
 }
 
 #pragma mark - Data Logging

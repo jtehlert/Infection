@@ -43,6 +43,8 @@ static NSString * const kVisualizationTableViewCellReuseIdentifier = @"Visualiza
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataUpdated:) name:@"DataUpdated" object:nil];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -68,10 +70,9 @@ static NSString * const kVisualizationTableViewCellReuseIdentifier = @"Visualiza
     }
 }
 
-- (void)didReceiveMemoryWarning
+- (void)dataUpdated:(NSNotification *)n
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -98,7 +99,7 @@ static NSString * const kVisualizationTableViewCellReuseIdentifier = @"Visualiza
         INFNode *node = [(INFTree *)object rootNode];
         INFUser *user = [node user];
         
-        cellLabel = [NSString stringWithFormat:@"Class %ld - %@", indexPath.row + 1, [user userName]];
+        cellLabel = [NSString stringWithFormat:@"%@ - %@", [(INFTree *)object className], [user userName]];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.detailTextLabel.text = [self generateDetailStringForUser:user];
     } else if([object isKindOfClass:[INFNode class]])
