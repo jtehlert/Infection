@@ -102,6 +102,19 @@ static INFDataManager *shared = NULL;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DataUpdated" object:nil];
 }
 
+- (void)resetData
+{
+    self.infectedUsers = 0;
+    self.healthyUsers = 0;
+    
+    for(INFUser *user in [self users])
+    {
+        [user setIsInfected:NO];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DataUpdated" object:nil];
+}
+
 - (NSArray *)users
 {
     return [NSArray arrayWithArray:self.allUsers];

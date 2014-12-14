@@ -17,7 +17,7 @@ static NSString * const kVisualizationTableViewCellReuseIdentifier = @"Visualiza
 
 @interface INFVisualizationTableViewController ()
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) NSString *titleString;
@@ -72,7 +72,9 @@ static NSString * const kVisualizationTableViewCellReuseIdentifier = @"Visualiza
 
 - (void)dataUpdated:(NSNotification *)n
 {
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - Table view data source

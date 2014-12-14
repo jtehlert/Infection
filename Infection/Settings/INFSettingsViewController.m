@@ -7,8 +7,11 @@
 //
 
 #import "INFSettingsViewController.h"
+#import "INFDataManager.h"
 
 @interface INFSettingsViewController ()
+
+- (IBAction)resetDataPressed:(id)sender;
 
 @end
 
@@ -16,22 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)resetDataPressed:(id)sender
+{
+    [[INFDataManager sharedManager] resetData];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Data Reset" message:@"All users are no longer infected!" delegate:nil cancelButtonTitle:@"Thanks!" otherButtonTitles:nil, nil];
+    [alert show];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

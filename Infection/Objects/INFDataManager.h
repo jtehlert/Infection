@@ -17,6 +17,7 @@
 - (void)generateDefaultData;
 - (INFTree *)treeThatUserExistsIn:(INFUser *)user;
 - (void)infectTree:(INFTree *)tree;
+- (void)resetData;
 
 - (NSArray *)trees;
 - (NSInteger)healthyUsers;

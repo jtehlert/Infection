@@ -42,7 +42,9 @@ static NSInteger const kNodeVerticalSpacing = 50;
 
 - (void)dataUpdated:(NSNotification *)n
 {
-    [self setNeedsDisplay];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setNeedsDisplay];
+    });
 }
 
 - (void)drawRootNode

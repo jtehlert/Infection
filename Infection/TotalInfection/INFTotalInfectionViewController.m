@@ -43,8 +43,10 @@ static NSString * const kTotalInfectionTableViewCellReuseIdentifier = @"TotalInf
 
 - (void)dataUpdated:(NSNotification *)n
 {
-    [self setUserStatusLabels];
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setUserStatusLabels];
+        [self.tableView reloadData];
+    });
 }
 
 #pragma mark - Table view data source
