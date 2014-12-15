@@ -78,7 +78,7 @@ static INFDataManager *shared = NULL;
         }
         
         [tree setRoot:root];
-        self.healthyUsers++;
+//        self.healthyUsers++;
         
         [mutableData addObject:tree];
     }
@@ -101,11 +101,14 @@ static INFDataManager *shared = NULL;
 {
     INFNode *rootNode = [tree rootNode];
     INFUser *rootUser = [rootNode user];
-    [rootUser setIsInfected:YES];
+    if(![rootUser isUserInfected])
+    {
+        [rootUser setIsInfected:YES];
+        self.infectedUsers++;
+    }
     
     [self infectInteriorNodes:[rootNode nodes]];
-    self.infectedUsers++;
-    self.healthyUsers--;
+//    self.healthyUsers--;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DataUpdated" object:nil];
 }
@@ -147,6 +150,11 @@ static INFDataManager *shared = NULL;
 // Runs in polynomial time
 - (BOOL)canInfectExactNumberOfUsers:(NSInteger)num
 {
+    if(num == 0)
+    {
+        return YES;
+    }
+    
     NSInteger length = [self.teacherNodes count];
     
     NSMutableArray *table = [[NSMutableArray alloc] initWithCapacity:0];
@@ -233,7 +241,7 @@ static INFDataManager *shared = NULL;
     [user setIsInfected:YES];
     
     self.infectedUsers++;
-    self.healthyUsers--;
+//    self.healthyUsers--;
     
     if([node nodes])
     {
@@ -245,7 +253,7 @@ static INFDataManager *shared = NULL;
                 [user setIsInfected:YES];
                 
                 self.infectedUsers++;
-                self.healthyUsers--;
+//                self.healthyUsers--;
             }
         }
     }
@@ -255,7 +263,7 @@ static INFDataManager *shared = NULL;
 
 - (NSInteger)healthyUsers
 {
-    return _healthyUsers;
+    return [[self users] count] - _infectedUsers;
 }
 
 - (NSInteger)infectedUsers
@@ -293,7 +301,7 @@ static INFDataManager *shared = NULL;
             [self.teacherNodes addObject:node];
             
             [mutableArray addObject:node];
-            self.healthyUsers++;
+//            self.healthyUsers++;
         } else if ([object isKindOfClass:[NSString class]])
         {
             self.studentCount++;
@@ -306,7 +314,7 @@ static INFDataManager *shared = NULL;
             [node setUserObject:student];
             
             [mutableArray addObject:node];
-            self.healthyUsers++;
+//            self.healthyUsers++;
         }
     }
     
@@ -319,9 +327,11 @@ static INFDataManager *shared = NULL;
     {
         INFUser *user = [node user];
         
-        [user setIsInfected:YES];
-        self.infectedUsers++;
-        self.healthyUsers--;
+        if(![user isUserInfected])
+        {
+            [user setIsInfected:YES];
+            self.infectedUsers++;
+        }
         
         if([user isUserATeacher])
         {

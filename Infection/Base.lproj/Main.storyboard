@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9nK-dI-1rd">
-                                <rect key="frame" x="15" y="124" width="230" height="406.5"/>
+                                <rect key="frame" x="15" y="124" width="230" height="407"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="230" id="gt6-ay-Gai"/>
@@ -48,13 +48,13 @@
                                 <sections/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which user would you like to infect?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucv-HI-OFW">
-                                <rect key="frame" x="162" y="84" width="277" height="20.5"/>
+                                <rect key="frame" x="162" y="84" width="277" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUY-5y-wXz">
-                                <rect key="frame" x="255" y="237" width="319" height="20.5"/>
+                                <rect key="frame" x="255" y="237" width="319" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthy Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-ER-itj">
-                                <rect key="frame" x="255" y="332" width="319" height="20.5"/>
+                                <rect key="frame" x="255" y="332" width="319" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -208,19 +208,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8u-mo-NEk">
-                                <rect key="frame" x="0.0" y="234" width="298.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="234" width="298" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R18-1P-tAh">
-                                <rect key="frame" x="0.0" y="262" width="323.5" height="29"/>
+                                <rect key="frame" x="0.0" y="262" width="298" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthy Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUw-3v-40V">
-                                <rect key="frame" x="301" y="233" width="283" height="20.5"/>
+                                <rect key="frame" x="301" y="233" width="283" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -239,7 +239,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many users would you like to infect?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8I-Hq-oKC">
-                                <rect key="frame" x="16" y="84" width="568" height="20.5"/>
+                                <rect key="frame" x="16" y="84" width="568" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -283,7 +283,7 @@
                             <constraint firstItem="u8I-Hq-oKC" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leadingMargin" id="M6L-aL-a7X"/>
                             <constraint firstItem="Y4Y-MM-zSc" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="top" id="NTD-5c-eBL"/>
                             <constraint firstAttribute="centerX" secondItem="1Xq-4e-YPr" secondAttribute="centerX" id="O3e-Id-djn"/>
-                            <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="B8u-mo-NEk" secondAttribute="trailing" constant="25" id="OYM-Eh-LZA"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="B8u-mo-NEk" secondAttribute="trailing" id="OYM-Eh-LZA"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" id="Op6-rx-YsT"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="leading" id="RES-eW-yIx"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="top" secondItem="wUw-3v-40V" secondAttribute="bottom" constant="15" id="T5h-Gy-GMf"/>
