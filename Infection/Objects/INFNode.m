@@ -14,6 +14,7 @@
 @property (strong, nonatomic) INFUser *user;
 @property (strong, nonatomic) NSArray *nodes;
 @property (assign, nonatomic) NSInteger childrenSize;
+@property (assign, nonatomic) BOOL isRoot;
 
 @end
 
@@ -34,6 +35,11 @@
     _childrenSize = size;
 }
 
+- (void)setIsARootNode:(BOOL)isRoot
+{
+    _isRoot = isRoot;
+}
+
 - (INFUser *)user
 {
     return _user;
@@ -47,6 +53,11 @@
 - (NSInteger)size
 {
     return _childrenSize;
+}
+
+- (BOOL)isARootNode
+{
+    return _isRoot;
 }
 
 - (NSString *)description

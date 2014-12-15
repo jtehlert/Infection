@@ -206,9 +206,122 @@
                     <view key="view" contentMode="scaleToFill" id="eQ7-5C-umo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8u-mo-NEk">
+                                <rect key="frame" x="0.0" y="234" width="298.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R18-1P-tAh">
+                                <rect key="frame" x="0.0" y="262" width="323.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Healthy Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUw-3v-40V">
+                                <rect key="frame" x="301" y="233" width="283" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fi2-fZ-6x9">
+                                <rect key="frame" x="301" y="262" width="293" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Y-MM-zSc">
+                                <rect key="frame" x="298" y="234" width="3" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="3" id="2XI-17-ZeB"/>
+                                    <constraint firstAttribute="height" constant="40" id="42u-Ru-NEn"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many users would you like to infect?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8I-Hq-oKC">
+                                <rect key="frame" x="16" y="84" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tq9-5F-Gjv">
+                                <rect key="frame" x="225" y="119" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="5Q1-0a-bzc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xq-4e-YPr">
+                                <rect key="frame" x="275" y="164" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.74117647060000003" green="0.82352941180000006" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7dx-4b-FMR"/>
+                                </constraints>
+                                <state key="normal" title="Infect">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="infectButtonPressed:" destination="iGB-p2-rAc" eventType="touchUpInside" id="VQ5-c4-OGe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.27058823529999998" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="u8I-Hq-oKC" secondAttribute="trailing" id="07j-uC-6sJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wUw-3v-40V" secondAttribute="trailing" id="1wh-8s-449"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="leading" id="47F-lc-VY2"/>
+                            <constraint firstAttribute="centerX" secondItem="tq9-5F-Gjv" secondAttribute="centerX" id="9ee-ip-YtM"/>
+                            <constraint firstItem="1Xq-4e-YPr" firstAttribute="top" secondItem="tq9-5F-Gjv" secondAttribute="bottom" constant="15" id="Abw-hP-dqn"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="B8u-mo-NEk" secondAttribute="trailing" id="GqU-aE-54d"/>
+                            <constraint firstItem="wUw-3v-40V" firstAttribute="leading" secondItem="Y4Y-MM-zSc" secondAttribute="trailing" id="HNd-KB-lQ8"/>
+                            <constraint firstItem="Fi2-fZ-6x9" firstAttribute="trailing" secondItem="wUw-3v-40V" secondAttribute="trailing" constant="10" id="KDL-5h-2z3"/>
+                            <constraint firstItem="B8u-mo-NEk" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leading" id="Kfm-Bx-6I2"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" id="Klo-Ac-vnQ"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="bottom" constant="15" id="LI6-N9-pNs"/>
+                            <constraint firstItem="u8I-Hq-oKC" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leadingMargin" id="M6L-aL-a7X"/>
+                            <constraint firstItem="Y4Y-MM-zSc" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="top" id="NTD-5c-eBL"/>
+                            <constraint firstAttribute="centerX" secondItem="1Xq-4e-YPr" secondAttribute="centerX" id="O3e-Id-djn"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="B8u-mo-NEk" secondAttribute="trailing" constant="25" id="OYM-Eh-LZA"/>
+                            <constraint firstItem="Fi2-fZ-6x9" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" id="Op6-rx-YsT"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="leading" id="RES-eW-yIx"/>
+                            <constraint firstItem="Fi2-fZ-6x9" firstAttribute="top" secondItem="wUw-3v-40V" secondAttribute="bottom" constant="15" id="T5h-Gy-GMf"/>
+                            <constraint firstItem="Fi2-fZ-6x9" firstAttribute="top" secondItem="wUw-3v-40V" secondAttribute="bottom" constant="8.5" id="Vff-3I-r7y"/>
+                            <constraint firstItem="wUw-3v-40V" firstAttribute="top" secondItem="Y4Y-MM-zSc" secondAttribute="top" constant="-1" id="YiK-zY-se4"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="wUw-3v-40V" secondAttribute="trailing" id="ZOL-na-DCm"/>
+                            <constraint firstItem="tq9-5F-Gjv" firstAttribute="top" secondItem="u8I-Hq-oKC" secondAttribute="bottom" constant="15" id="auc-AH-KVg"/>
+                            <constraint firstItem="Y4Y-MM-zSc" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="trailing" id="eFx-zv-Qhd"/>
+                            <constraint firstAttribute="centerX" secondItem="B8u-mo-NEk" secondAttribute="centerX" id="hMQ-PH-wXb"/>
+                            <constraint firstItem="u8I-Hq-oKC" firstAttribute="top" secondItem="suU-yq-Rtk" secondAttribute="bottom" constant="20" id="nVu-tK-X3K"/>
+                            <constraint firstItem="R18-1P-tAh" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="bottom" constant="7.5" id="pAL-CQ-2ee"/>
+                            <constraint firstItem="Fi2-fZ-6x9" firstAttribute="trailing" secondItem="wUw-3v-40V" secondAttribute="trailing" constant="2" id="pLY-zZ-yHe"/>
+                            <constraint firstItem="Y4Y-MM-zSc" firstAttribute="top" secondItem="1Xq-4e-YPr" secondAttribute="bottom" constant="40" id="qMx-oh-U7u"/>
+                            <constraint firstItem="wUw-3v-40V" firstAttribute="top" secondItem="R18-1P-tAh" secondAttribute="bottom" constant="30" id="uKI-JC-Gvo"/>
+                            <constraint firstItem="Fi2-fZ-6x9" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" constant="-2" id="woR-o2-fkg"/>
+                            <constraint firstAttribute="centerX" secondItem="Y4Y-MM-zSc" secondAttribute="centerX" id="y9j-9d-MGH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hMQ-PH-wXb"/>
+                                <exclude reference="47F-lc-VY2"/>
+                                <exclude reference="GqU-aE-54d"/>
+                                <exclude reference="Klo-Ac-vnQ"/>
+                                <exclude reference="LI6-N9-pNs"/>
+                                <exclude reference="ZOL-na-DCm"/>
+                                <exclude reference="uKI-JC-Gvo"/>
+                                <exclude reference="T5h-Gy-GMf"/>
+                                <exclude reference="pLY-zZ-yHe"/>
+                                <exclude reference="woR-o2-fkg"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Limited Infection" id="kfE-cG-Yfq"/>
+                    <connections>
+                        <outlet property="healthyUsersLabel" destination="Fi2-fZ-6x9" id="2O0-bW-2pB"/>
+                        <outlet property="infectedUsersLabel" destination="R18-1P-tAh" id="gct-q8-rlG"/>
+                        <outlet property="toInfectTextField" destination="tq9-5F-Gjv" id="Ilk-CW-XJN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p4-Hr-wgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

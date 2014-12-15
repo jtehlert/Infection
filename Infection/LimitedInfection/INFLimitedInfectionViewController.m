@@ -7,8 +7,15 @@
 //
 
 #import "INFLimitedInfectionViewController.h"
+#import "INFDataManager.h"
 
-@interface INFLimitedInfectionViewController ()
+@interface INFLimitedInfectionViewController () <UIAlertViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *infectedUsersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *healthyUsersLabel;
+@property (weak, nonatomic) IBOutlet UITextField *toInfectTextField;
+
+- (IBAction)infectButtonPressed:(id)sender;
 
 @end
 
@@ -16,22 +23,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataUpdated:) name:@"DataUpdated" object:nil];
+    
+    [self setUserStatusLabels];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUserStatusLabels
+{
+    self.infectedUsersLabel.text = [NSString stringWithFormat:@"%ld", [[INFDataManager sharedManager] infectedUsers]];
+    self.healthyUsersLabel.text = [NSString stringWithFormat:@"%ld", [[INFDataManager sharedManager] healthyUsers]];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)dataUpdated:(NSNotification *)n
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setUserStatusLabels];
+    });
 }
-*/
+
+- (IBAction)infectButtonPressed:(id)sender {
+    [[INFDataManager sharedManager] resetData];
+    
+    NSInteger enteredNumber = [[self.toInfectTextField text] integerValue];
+    
+    if([[INFDataManager sharedManager] canInfectExactNumberOfUsers:enteredNumber])
+    {
+        NSLog(@"YES");
+    } else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"We cannot infect that exact number of users. Would you like to infect a number close to that instead?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alert show];
+    }
+}
 
 @end

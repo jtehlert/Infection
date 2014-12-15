@@ -57,6 +57,7 @@ static INFDataManager *shared = NULL;
         [tree setClassName:[NSString stringWithFormat:@"Class %ld", self.treeCount]];
         
         INFNode *root = [[INFNode alloc] init];
+        [root setIsARootNode:YES];
         
         // Make sure class has data
         if([class count] > 0)
@@ -86,6 +87,8 @@ static INFDataManager *shared = NULL;
     
     [self generateTeacherSizes];
     
+    NSLog(@"%@", self.teacherNodes);
+    
     [self printOutAllTrees];
 }
 
@@ -110,7 +113,7 @@ static INFDataManager *shared = NULL;
 - (void)resetData
 {
     self.infectedUsers = 0;
-    self.healthyUsers = 0;
+    self.healthyUsers = [[self users] count];
     
     for(INFUser *user in [self users])
     {
@@ -138,6 +141,114 @@ static INFDataManager *shared = NULL;
     }
     
     return nonInfectedUsers;
+}
+
+// Utilizes Dynamic programming to determine if an exact combination can be made
+// Runs in polynomial time
+- (BOOL)canInfectExactNumberOfUsers:(NSInteger)num
+{
+    NSInteger length = [self.teacherNodes count];
+    
+    NSMutableArray *table = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for(NSInteger i = 0; i < num+1; i++)
+    {
+        [table addObject:[[NSMutableArray alloc] initWithCapacity:length+1]];
+    }
+    
+    NSInteger i = 0;
+    
+    for(i = 0; i <= length; i++)
+    {
+        [[table objectAtIndex:0] setObject:[NSNumber numberWithBool:YES] atIndex:i];
+    }
+    
+    for(i = 1; i <= num; i++)
+    {
+        [[table objectAtIndex:i] setObject:[NSNumber numberWithBool:NO] atIndex:0];
+    }
+
+    for(i = 1; i <= num; i++)
+    {
+        for(NSInteger j = 1; j <= length; j++)
+        {
+            table[i][j] = table[i][j-1];
+            [[table objectAtIndex:i] setObject:[[table objectAtIndex:i] objectAtIndex:j-1] atIndex:j];
+            
+            INFNode *node = [self.teacherNodes objectAtIndex:j-1];
+            if(i >= [node size])
+            {
+                if([[table objectAtIndex:i] objectAtIndex:j] == [NSNumber numberWithBool:YES] ||
+                   [[table objectAtIndex:i - [node size]] objectAtIndex:j-1] == [NSNumber numberWithBool:YES])
+                {
+                    [[table objectAtIndex:i] setObject:[NSNumber numberWithBool:YES] atIndex:j];
+                } else
+                {
+                    [[table objectAtIndex:i] setObject:[NSNumber numberWithBool:NO] atIndex:j];
+                }
+            }
+        }
+    }
+    
+    if([[table objectAtIndex:num] objectAtIndex:length] == [NSNumber numberWithBool:YES])
+    {
+        NSMutableArray *resultSet = [[NSMutableArray alloc] initWithCapacity:0];
+        NSInteger i = num;
+        NSInteger j = [(NSMutableArray *)[table objectAtIndex:0] count] - 1;
+        
+        do {
+            while([[table objectAtIndex:i] objectAtIndex:j] == [NSNumber numberWithBool:YES])
+            {
+                j--;
+            }
+            j++;
+            
+            INFNode *node = [self.teacherNodes objectAtIndex:j-1];
+            [resultSet addObject:node];
+            i = i - [node size];
+            
+            if(i == 0)
+            {
+                break;
+            }
+        } while ([[table objectAtIndex:i] objectAtIndex:j] == [NSNumber numberWithBool:YES]);
+        
+        NSLog(@"%@", resultSet);
+        
+        for(INFNode *node in resultSet)
+        {
+            [self infectNodeDownToOneLevel:node];
+        }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"DataUpdated" object:nil];
+        
+    }
+    
+    return table[num][length] == [NSNumber numberWithBool:YES];
+}
+
+- (void)infectNodeDownToOneLevel:(INFNode *)node
+{
+    INFUser *user = [node user];
+    [user setIsInfected:YES];
+    
+    self.infectedUsers++;
+    self.healthyUsers--;
+    
+    if([node nodes])
+    {
+        for(INFNode *interiorNode in [node nodes])
+        {
+            INFUser *user = [interiorNode user];
+            if(![user isUserATeacher])
+            {
+                [user setIsInfected:YES];
+                
+                self.infectedUsers++;
+                self.healthyUsers--;
+            }
+        }
+    }
 }
 
 #pragma mark - properties
@@ -224,17 +335,14 @@ static INFDataManager *shared = NULL;
     for(INFNode *node in self.teacherNodes)
     {
         [node setSize:[self interiorTeacherNodeSize:node andPreviousSize:1]];
-    }    
+    }
 }
 
 - (NSInteger)interiorTeacherNodeSize:(INFNode *)node andPreviousSize:(NSInteger)size
 {
     for(INFNode *interiorNode in [node nodes])
     {
-        if([interiorNode size] > 0)
-        {
-            size += [interiorNode size];
-        } else
+        if(![interiorNode size] > 0)
         {
             size++;
         }

@@ -15,9 +15,11 @@
 - (void)setUserObject:(INFUser *)obj;
 - (void)setInteriorNodes:(NSArray *)nodes;
 - (void)setSize:(NSInteger)size;
+- (void)setIsARootNode:(BOOL)isRoot;
 
 - (NSArray *)nodes;
 - (INFUser *)user;
 - (NSInteger)size;
+- (BOOL)isARootNode;
 
 @end
