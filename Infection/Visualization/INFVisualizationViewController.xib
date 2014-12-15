@@ -17,16 +17,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4B-tV-djs">
-                    <rect key="frame" x="10" y="44" width="580" height="20.5"/>
+                    <rect key="frame" x="10" y="44" width="580" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-uj-t05">
-                    <rect key="frame" x="0.0" y="84.5" width="600" height="515.5"/>
+                    <rect key="frame" x="0.0" y="85" width="600" height="516"/>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.22352941176470587" green="0.27058823529411763" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="aoo-uj-t05" firstAttribute="top" secondItem="m4B-tV-djs" secondAttribute="bottom" constant="20" id="NdG-9Q-cKN"/>
                 <constraint firstItem="aoo-uj-t05" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qms-Xi-4Tn"/>

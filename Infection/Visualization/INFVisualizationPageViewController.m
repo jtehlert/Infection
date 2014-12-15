@@ -32,9 +32,16 @@ static NSString *const kVisualizationViewControllerNibName = @"INFVisualizationV
     
     self.view.backgroundColor = [UIColor colorWithRed:(57.0/255.0) green:(69.0/255.0) blue:(81.0/255.0) alpha:1.0];
     
-    [self setViewControllers:[NSArray arrayWithObjects:[self.viewControllersArray firstObject], nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
-        
-    }];
+    [self setViewControllers:[NSArray arrayWithObjects:[self.viewControllersArray firstObject], nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    
+    UIImageView *notInfectedImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"notinfected"]];
+    UIImageView *infectedImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"infected"]];
+    
+    [notInfectedImage setFrame:CGRectMake(150, self.view.frame.size.height - 90, 100, 40)];
+    [infectedImage setFrame:CGRectMake(450, self.view.frame.size.height - 90, 100, 40)];
+    
+    [self.view addSubview:notInfectedImage];
+    [self.view addSubview:infectedImage];
 }
 
 - (void)generateViewControllers

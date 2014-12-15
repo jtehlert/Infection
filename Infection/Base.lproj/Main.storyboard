@@ -185,7 +185,7 @@
         <scene sceneID="bEf-8p-Apc">
             <objects>
                 <splitViewController id="wRs-2o-zI8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Visualization" id="GSZ-Tx-okA"/>
+                    <tabBarItem key="tabBarItem" title="Visualization" image="tree" id="GSZ-Tx-okA"/>
                     <connections>
                         <segue destination="2qY-FF-LJy" kind="relationship" relationship="masterViewController" id="giF-uk-taE"/>
                         <segue destination="9Fr-qM-xsW" kind="relationship" relationship="detailViewController" id="gR1-iF-ETQ"/>
@@ -266,39 +266,86 @@
                                     <action selector="infectButtonPressed:" destination="iGB-p2-rAc" eventType="touchUpInside" id="VQ5-c4-OGe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examples" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54m-KI-lZw">
+                                <rect key="frame" x="16" y="321" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 - Will Result in infecting 3 users" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1s-6g-XEE">
+                                <rect key="frame" x="16" y="361" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22 - Will Result in infecting 22 users" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3N-aQ-io8">
+                                <rect key="frame" x="16" y="390" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="53 - Will Result in infecting 52 users" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjs-uy-HnT">
+                                <rect key="frame" x="16" y="447" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43 - Will Result in infecting 43 users" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyl-HI-7Fp">
+                                <rect key="frame" x="16" y="418" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941179999999" green="0.27058823529999998" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="u8I-Hq-oKC" secondAttribute="trailing" id="07j-uC-6sJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wUw-3v-40V" secondAttribute="trailing" id="1wh-8s-449"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="leading" id="47F-lc-VY2"/>
+                            <constraint firstItem="lyl-HI-7Fp" firstAttribute="trailing" secondItem="Hjs-uy-HnT" secondAttribute="trailing" id="5Fi-ZU-5Fi"/>
+                            <constraint firstItem="54m-KI-lZw" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leadingMargin" id="85w-Tu-eQM"/>
                             <constraint firstAttribute="centerX" secondItem="tq9-5F-Gjv" secondAttribute="centerX" id="9ee-ip-YtM"/>
                             <constraint firstItem="1Xq-4e-YPr" firstAttribute="top" secondItem="tq9-5F-Gjv" secondAttribute="bottom" constant="15" id="Abw-hP-dqn"/>
+                            <constraint firstItem="lyl-HI-7Fp" firstAttribute="leading" secondItem="Hjs-uy-HnT" secondAttribute="leading" id="EUw-20-3D9"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="B8u-mo-NEk" secondAttribute="trailing" id="GqU-aE-54d"/>
                             <constraint firstItem="wUw-3v-40V" firstAttribute="leading" secondItem="Y4Y-MM-zSc" secondAttribute="trailing" id="HNd-KB-lQ8"/>
+                            <constraint firstItem="u1s-6g-XEE" firstAttribute="top" secondItem="R18-1P-tAh" secondAttribute="bottom" constant="20" id="Ij7-Kw-VQx"/>
+                            <constraint firstItem="D3N-aQ-io8" firstAttribute="trailing" secondItem="lyl-HI-7Fp" secondAttribute="trailing" id="JQ2-4B-kIG"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="trailing" secondItem="wUw-3v-40V" secondAttribute="trailing" constant="10" id="KDL-5h-2z3"/>
+                            <constraint firstAttribute="centerX" secondItem="54m-KI-lZw" secondAttribute="centerX" id="KQb-8Z-rIW"/>
                             <constraint firstItem="B8u-mo-NEk" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leading" id="Kfm-Bx-6I2"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" id="Klo-Ac-vnQ"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="bottom" constant="15" id="LI6-N9-pNs"/>
+                            <constraint firstItem="Hjs-uy-HnT" firstAttribute="top" secondItem="lyl-HI-7Fp" secondAttribute="bottom" constant="8" id="LnZ-I6-CWf"/>
                             <constraint firstItem="u8I-Hq-oKC" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leadingMargin" id="M6L-aL-a7X"/>
                             <constraint firstItem="Y4Y-MM-zSc" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="top" id="NTD-5c-eBL"/>
                             <constraint firstAttribute="centerX" secondItem="1Xq-4e-YPr" secondAttribute="centerX" id="O3e-Id-djn"/>
+                            <constraint firstItem="D3N-aQ-io8" firstAttribute="leading" secondItem="lyl-HI-7Fp" secondAttribute="leading" id="OKn-cL-ten"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="B8u-mo-NEk" secondAttribute="trailing" id="OYM-Eh-LZA"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" id="Op6-rx-YsT"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="leading" id="RES-eW-yIx"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="top" secondItem="wUw-3v-40V" secondAttribute="bottom" constant="15" id="T5h-Gy-GMf"/>
+                            <constraint firstItem="D3N-aQ-io8" firstAttribute="leading" secondItem="u1s-6g-XEE" secondAttribute="leading" id="Ult-0a-GoN"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="top" secondItem="wUw-3v-40V" secondAttribute="bottom" constant="8.5" id="Vff-3I-r7y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="54m-KI-lZw" secondAttribute="trailing" id="Y4g-FV-YgP"/>
                             <constraint firstItem="wUw-3v-40V" firstAttribute="top" secondItem="Y4Y-MM-zSc" secondAttribute="top" constant="-1" id="YiK-zY-se4"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="trailing" secondItem="wUw-3v-40V" secondAttribute="trailing" id="ZOL-na-DCm"/>
                             <constraint firstItem="tq9-5F-Gjv" firstAttribute="top" secondItem="u8I-Hq-oKC" secondAttribute="bottom" constant="15" id="auc-AH-KVg"/>
                             <constraint firstItem="Y4Y-MM-zSc" firstAttribute="leading" secondItem="B8u-mo-NEk" secondAttribute="trailing" id="eFx-zv-Qhd"/>
                             <constraint firstAttribute="centerX" secondItem="B8u-mo-NEk" secondAttribute="centerX" id="hMQ-PH-wXb"/>
+                            <constraint firstItem="54m-KI-lZw" firstAttribute="top" secondItem="R18-1P-tAh" secondAttribute="bottom" constant="30" id="m2R-Pv-vhO"/>
                             <constraint firstItem="u8I-Hq-oKC" firstAttribute="top" secondItem="suU-yq-Rtk" secondAttribute="bottom" constant="20" id="nVu-tK-X3K"/>
                             <constraint firstItem="R18-1P-tAh" firstAttribute="top" secondItem="B8u-mo-NEk" secondAttribute="bottom" constant="7.5" id="pAL-CQ-2ee"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="trailing" secondItem="wUw-3v-40V" secondAttribute="trailing" constant="2" id="pLY-zZ-yHe"/>
                             <constraint firstItem="Y4Y-MM-zSc" firstAttribute="top" secondItem="1Xq-4e-YPr" secondAttribute="bottom" constant="40" id="qMx-oh-U7u"/>
+                            <constraint firstItem="D3N-aQ-io8" firstAttribute="trailing" secondItem="u1s-6g-XEE" secondAttribute="trailing" id="qXM-mN-21d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u1s-6g-XEE" secondAttribute="trailing" id="qpB-5E-SKl"/>
+                            <constraint firstItem="D3N-aQ-io8" firstAttribute="top" secondItem="u1s-6g-XEE" secondAttribute="bottom" constant="8" id="sDz-mD-Rim"/>
+                            <constraint firstItem="u1s-6g-XEE" firstAttribute="top" secondItem="54m-KI-lZw" secondAttribute="bottom" constant="20" id="uGh-R0-Ciu"/>
                             <constraint firstItem="wUw-3v-40V" firstAttribute="top" secondItem="R18-1P-tAh" secondAttribute="bottom" constant="30" id="uKI-JC-Gvo"/>
+                            <constraint firstItem="u1s-6g-XEE" firstAttribute="leading" secondItem="eQ7-5C-umo" secondAttribute="leadingMargin" id="vby-QO-CVz"/>
                             <constraint firstItem="Fi2-fZ-6x9" firstAttribute="leading" secondItem="wUw-3v-40V" secondAttribute="leading" constant="-2" id="woR-o2-fkg"/>
+                            <constraint firstItem="lyl-HI-7Fp" firstAttribute="top" secondItem="D3N-aQ-io8" secondAttribute="bottom" constant="8" id="xFW-JI-dPd"/>
                             <constraint firstAttribute="centerX" secondItem="Y4Y-MM-zSc" secondAttribute="centerX" id="y9j-9d-MGH"/>
                         </constraints>
                         <variation key="default">
@@ -309,10 +356,12 @@
                                 <exclude reference="Klo-Ac-vnQ"/>
                                 <exclude reference="LI6-N9-pNs"/>
                                 <exclude reference="ZOL-na-DCm"/>
+                                <exclude reference="Ij7-Kw-VQx"/>
                                 <exclude reference="uKI-JC-Gvo"/>
                                 <exclude reference="T5h-Gy-GMf"/>
                                 <exclude reference="pLY-zZ-yHe"/>
                                 <exclude reference="woR-o2-fkg"/>
+                                <exclude reference="KQb-8Z-rIW"/>
                             </mask>
                         </variation>
                     </view>
@@ -331,7 +380,7 @@
         <scene sceneID="zxk-dZ-nF5">
             <objects>
                 <navigationController title="Total Infection" id="cvE-Fo-8eR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Total Infection" id="giC-oA-3yH"/>
+                    <tabBarItem key="tabBarItem" title="Total Infection" image="total" id="giC-oA-3yH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uFX-OV-dpl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -348,7 +397,7 @@
         <scene sceneID="tOo-jA-GsK">
             <objects>
                 <navigationController title="Settings" id="Vwm-W8-nz5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="Rah-3C-YGu"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Rah-3C-YGu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cpQ-n7-GnN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -388,15 +437,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="khanacademy" translatesAutoresizingMaskIntoConstraints="NO" id="3er-RI-slJ">
+                                <rect key="frame" x="180" y="408" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Sho-OY-JXL"/>
+                                    <constraint firstAttribute="height" constant="128" id="cpX-Xz-uDR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Justin Ehlert, for Khan Academy's Software Development Internship Interview" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0il-x4-AE3">
+                                <rect key="frame" x="16" y="347" width="568" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941179999999" green="0.27058823529999998" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lLQ-vj-Oz3" firstAttribute="top" secondItem="g9y-45-7Y0" secondAttribute="bottom" constant="10" id="7cY-sS-HsJ"/>
                             <constraint firstItem="g9y-45-7Y0" firstAttribute="leading" secondItem="fuw-OT-MsO" secondAttribute="leadingMargin" id="BTw-BH-obq"/>
+                            <constraint firstItem="u03-TE-c3y" firstAttribute="top" secondItem="3er-RI-slJ" secondAttribute="bottom" constant="15" id="C7H-RJ-Cd4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lLQ-vj-Oz3" secondAttribute="trailing" id="UDK-mF-spT"/>
                             <constraint firstItem="lLQ-vj-Oz3" firstAttribute="leading" secondItem="fuw-OT-MsO" secondAttribute="leadingMargin" id="Vtp-UK-Kaj"/>
+                            <constraint firstItem="3er-RI-slJ" firstAttribute="top" secondItem="0il-x4-AE3" secondAttribute="bottom" constant="20" id="Xtq-Vo-Zmt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g9y-45-7Y0" secondAttribute="trailing" id="dD1-oX-CVY"/>
                             <constraint firstItem="g9y-45-7Y0" firstAttribute="top" secondItem="d5K-6Q-kcz" secondAttribute="bottom" constant="40" id="fDy-fS-qE5"/>
+                            <constraint firstAttribute="centerX" secondItem="3er-RI-slJ" secondAttribute="centerX" id="fZS-oG-MaG"/>
+                            <constraint firstItem="0il-x4-AE3" firstAttribute="leading" secondItem="fuw-OT-MsO" secondAttribute="leadingMargin" id="gg5-EF-1yR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0il-x4-AE3" secondAttribute="trailing" id="jkx-vs-9v2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="S09-sl-rpP"/>
@@ -409,7 +476,7 @@
         <scene sceneID="ZNd-X5-KMJ">
             <objects>
                 <navigationController title="Limited Infection" id="fTJ-Xx-jMc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Limited Infection" id="1dQ-f9-odW"/>
+                    <tabBarItem key="tabBarItem" title="Limited Infection" image="limited" id="1dQ-f9-odW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dg0-US-has">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -444,4 +511,11 @@
             <point key="canvasLocation" x="-1" y="453"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="khanacademy" width="450" height="450"/>
+        <image name="limited" width="37" height="37"/>
+        <image name="settings" width="37" height="37"/>
+        <image name="total" width="37" height="37"/>
+        <image name="tree" width="37" height="37"/>
+    </resources>
 </document>
